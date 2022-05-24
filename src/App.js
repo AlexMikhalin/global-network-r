@@ -1,6 +1,6 @@
  import React, { Component } from 'react';
 import { connect, Provider } from 'react-redux';
-import {BrowserRouter, Route, Routes} from 'react-router-dom' 
+import {BrowserRouter, HashRouter, Route, Routes} from 'react-router-dom' 
 import { compose } from 'redux';
 import './App.css';
 import Preloader from './components/common/preloader/Preloader';
@@ -28,7 +28,7 @@ class App extends Component {
 
     if(this.props.initialized){
       <Preloader />
-    }
+      }
 
     return (
         <div className='app-wrapper'>
@@ -62,9 +62,9 @@ let AppContainer = compose(
     
     return <Provider store={store}>
         
-      <BrowserRouter>
+      <HashRouter>
         <AppContainer />
-      </BrowserRouter>
+      </HashRouter>
     </Provider>
   }
 

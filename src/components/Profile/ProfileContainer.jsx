@@ -16,6 +16,10 @@ class ProfileContainer extends React.Component {
     this.props.getStatus(2);
   }
 
+  componentDidUpdate(prevProps, prevState, snapshot){
+    
+  }
+
   render() {
       return (
       <Profile 
