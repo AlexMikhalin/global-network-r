@@ -1,5 +1,4 @@
-import axios from 'axios';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import Profile from './Profile';
 
@@ -7,30 +6,25 @@ import { getUserProfile, getStatus, updateStatus } from "../../redux/profile-red
 import { withRouter } from './withRouter';
 import { withAuthRedirect } from '../../hoc/withAuthRedirect';
 import { compose } from 'redux';
+import { useParams } from 'react-router-dom';
 
-class ProfileContainer extends React.Component {
+const ProfileContainer = props => {
 
-  componentDidMount() {
-    this.props.getUserProfile(2);
-    
-    this.props.getStatus(2);
-  }
-
-  componentDidUpdate(prevProps, prevState, snapshot){
-    
-  }
-
-  render() {
-      return (
-      <Profile 
-        {...this.props}  
-        profile={this.props.profile} 
-        status={this.props.status}
-        updateStatus={this.props.updateStatus}
-      />
-      )
+  
+  let { userId } = useParams();
+  if(!userId) {
+    userId = this.props.authorizedUserId;
+    if(!userId){
+      this.props.history.push('/login');
     }
-}
+  }
+
+  useEffect(() => {
+    props.getUserProfile(userId);
+    props.getStatus(userId);
+  }, []);
+  return <Profile {...props} profile={props.profile} status={props.status} updateStatus={props.updateStatus} />;
+};
 
 let mapStateToProps = (state) => ({
   profile: state.profilePage.profile,

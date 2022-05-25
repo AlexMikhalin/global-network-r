@@ -38,7 +38,7 @@ class App extends Component {
           <Suspense fallback={<p> Loading...</p>}>
             <Routes>
               <Route path='/dialogs/*' element={ <DialogsContainer />}/>
-              <Route  path='/profile/*' element={ <ProfileContainer  /> }/>
+              <Route  path='/profile/:userId' element={ <ProfileContainer  /> }/>
               <Route  path='/users' element={ <UsersContainer  /> }/>
               <Route  path='/login' element={ <Login  /> }/>
             </Routes>
