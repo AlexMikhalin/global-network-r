@@ -17,7 +17,7 @@ const activateEditMode = () =>{
 
 const deactivateEditMode = () =>{
     setEditMode(false);
-  // props.updateStatus(status)
+   props.updateStatus(status)
 }
 const onStatusChange = (e) =>{
     setStatus(e.currentTarget.value);
@@ -27,7 +27,7 @@ return (
     <div>
         { !editMode &&
         <div>
-            <span onDoubleClick={ activateEditMode }>{props.status || '2131'}</span>
+          <b> Status: </b>  <span onDoubleClick={ activateEditMode }>{props.status || ' Введите статус'}</span>
         </div> 
         }
         {editMode &&
