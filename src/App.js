@@ -1,6 +1,6 @@
  import React, { Component } from 'react';
 import { connect, Provider } from 'react-redux';
-import {BrowserRouter, HashRouter, Navigate, Route, Routes} from 'react-router-dom' 
+import { HashRouter, Navigate, Route, Routes} from 'react-router-dom' 
 import { compose } from 'redux';
 import './App.css';
 import Preloader from './components/common/preloader/Preloader';
