@@ -5,12 +5,12 @@ import { compose } from 'redux';
 import './App.css';
 import Preloader from './components/common/preloader/Preloader';
 import HeaderContainer from './components/Header/HeaderContainer';
-import Login from './components/Login/Login';
+import Login from './components/Login/Login.tsx';
 import Navbar from './components/Navbar/Navbar';
 import { withRouter } from './components/Profile/withRouter';
-import UsersContainer from './components/Users/UsersContainer';
-import store from './redux/redux-store';
-import {initializeApp } from './redux/app-reducer';
+import UsersContainer from './components/Users/UsersContainer.tsx';
+import store from './redux/redux-store.ts';
+import {initializeApp } from './redux/app-reducer.ts';
 import { Suspense } from 'react';
 
 
@@ -50,7 +50,7 @@ class App extends Component {
               <Route path='/dialogs/*' element={ <DialogsContainer />}/>
               <Route path="/" element={<Navigate to="/profile/23861" />} />
               <Route  path='/profile/:userId' element={ <ProfileContainer  /> }/>
-              <Route  path='/users' element={ <UsersContainer  /> }/>
+              <Route  path='/users' element={ <UsersContainer pageTitle={'Samurai'} /> }/>
               <Route  path='/login' element={ <Login  /> }/>
               <Route  path='*' element={ <div>404 NOT FOUND</div> }/>
             </Routes>

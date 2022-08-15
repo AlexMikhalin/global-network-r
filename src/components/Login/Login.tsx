@@ -2,8 +2,8 @@ import { connect } from "react-redux"
 import { Field } from "redux-form"
 import { reduxForm } from "redux-form"
 import { requiredField } from "../../utils/validators/validators"
-import { createField, Input } from "../common/FormsControls/FormsControls"
-import {login} from '../../redux/auth-reducer';
+import { createField, Input } from "../common/FormsControls/FormsControls.tsx"
+import {login} from '../../redux/auth-reducer.ts';
 import { Navigate } from "react-router-dom";
 import style from './../common/FormsControls/FormsControls.module.css';
 

@@ -2,7 +2,7 @@ import { Navigate } from 'react-router-dom';
 import { reduxForm } from 'redux-form';
 import { Field } from 'redux-form';
 import { maxLengthCreator, requiredField } from '../../utils/validators/validators';
-import { Textarea } from '../common/FormsControls/FormsControls';
+import { Textarea } from '../common/FormsControls/FormsControls.tsx';
 import DialogItem from './DialogItem/DialogItem';
 import s from './Dialogs.module.css';
 import Message from './Message/Messge';
